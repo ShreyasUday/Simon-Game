@@ -30,7 +30,7 @@ A web-based memory game built using HTML, CSS, and JavaScript. Follow the patter
 
 ## 🔗 Live Demo
 
-[Live Preview](https://your-github-username.github.io/simon-game/)
+[Live Preview](https://shreyasuday.github.io/Simon-Game/)
 
 ---
 
