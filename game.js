@@ -5,6 +5,12 @@ var level = 0;
 var started = false;
 
 $(".btn").click(function (event) {
+  if (started === false) {
+    if (userClickedPattern.length == 0 && gamePattern.length == 0) {
+      $("#level-title").text("Try pressing any key please");
+    }
+    return;
+  }
   var userChosenColor = event.target.id;
   userClickedPattern.push(userChosenColor);
   playSound(userChosenColor);
@@ -25,7 +31,11 @@ function checkAnswer(currentLevel) {
     setTimeout(function () {
       $("body").removeClass("game-over");
     }, 200);
-    $("#level-title").text("Game Over, Press Any Key to Restart");
+   $("#level-title").html(
+      '<h1 id="level-title">Game Over<br/><br/>Your level was ' +
+        level +
+        "<br/><br/>Press any key to restart</h1>"
+    );
     $(document).on("keypress click", function () {
       startOver();
     });
